@@ -3,8 +3,10 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from google import genai
 import os
+from dotenv import load_dotenv
 
 app = FastAPI()
+load_dotenv()
 
 # Free Gemini API key
 client = genai.Client(api_key=os.getenv("API_KEY"))
