@@ -2,11 +2,12 @@ from typing import Optional
 from fastapi import FastAPI
 from pydantic import BaseModel
 from google import genai
+import os
 
 app = FastAPI()
 
 # Free Gemini API key
-client = genai.Client(api_key="AQ.Ab8RN6IxQKLtKl4qJFljaZkn74UBLuwOKOGDIMX4wKuQxxH7ow")
+client = genai.Client(api_key=os.getenv("API_KEY"))
 
 # Placeholder values
 class SceneContext(BaseModel):
